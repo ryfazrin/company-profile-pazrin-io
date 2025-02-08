@@ -11,8 +11,8 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://platform.twitter.com https://connect.facebook.net https://www.googletagmanager.com;
   style-src 'self' fonts.googleapis.com 'unsafe-inline';
   font-src 'self' fonts.gstatic.com;
-  connect-src 'self' https://www.google-analytics.com;
-  frame-src https://platform.twitter.com;  
+  connect-src 'self' https://www.google-analytics.com https://platform.twitter.com https://syndication.twitter.com https://cdn.builder.io https://cdn.builder.codes https://pbs.twimg.com;
+  frame-src 'self' https://platform.twitter.com;  
 `
 
 const securityHeaders = [

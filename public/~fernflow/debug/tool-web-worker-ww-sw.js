@@ -484,7 +484,7 @@
         return resolvedUrl;
     };
     const resolveUrl = (env, url, noUserHook) => resolveToUrl(env, url, noUserHook) + "";
-    const getFernflowScript = () => `<script src="${fernflowLibUrl("fernflow.js")}"><\/script>`;
+    const getFernflowScript = () => `<script src="${fernflowLibUrl("tool-web-worker.js")}"><\/script>`;
     const createImageConstructor = env => class HTMLImageElement {
         constructor() {
             this.s = "";
