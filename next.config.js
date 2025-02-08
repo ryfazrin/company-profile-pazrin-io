@@ -8,7 +8,7 @@ module.exports = nextConfig
 const ContentSecurityPolicy = `
   default-src 'self' 'unsafe-inline';
   img-src 'self' data: https:;
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://platform.twitter.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://platform.twitter.com https://connect.facebook.net;
   style-src 'self' fonts.googleapis.com 'unsafe-inline';
   font-src 'self' fonts.gstatic.com;
   connect-src 'self';

@@ -16,9 +16,13 @@ export default function Hero() {
           We create beautiful <br />and fast web services
         </h1>
       </section>
+      {/* Facebook Pixel */}
+      <div>
+        <button onClick={() => fbq('track', 'PageView')}>fbq('track', 'PageView')</button>
+      </div>
+      {/* Embed Tweet */}
       <div>
           {/* <Image src="/heroImage.jpg" alt="teamwork on web services" width="1332px" height="354px"/> */}
-          {/* Embed Tweet */}
         <blockquote className="twitter-tweet">
           <p lang="en" dir="ltr">
             Just setting up my Twitter. #myfirstTweet
