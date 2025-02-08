@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  /* width: 100vw; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.borderRadius18 {
+  display: flex;
+  justify-content: center;
+  border-radius: 18px;
+  height: 135px;
+  background: url("/heroImage60.webp");
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.logo {
+  font-family: Heebo;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 53px;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
