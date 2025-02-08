@@ -37,7 +37,12 @@ export default function Document() {
           />
           <script src="/~fernflow/debug/tool-web-worker.js" /> */}
           {/* Menambahkan script Twitter untuk embed widget */}
-          <script async type="text/fernflow" src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
+          <script 
+            async 
+            // type="text/fernflow" 
+            src="https://platform.twitter.com/widgets.js" 
+            charSet="utf-8"
+          />
       </Head>
       <body>
         <Main />

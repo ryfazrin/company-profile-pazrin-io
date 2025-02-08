@@ -23,7 +23,7 @@ export default function Hero() {
           <p lang="en" dir="ltr">
             Just setting up my Twitter. #myfirstTweet
           </p>
-          &mdash; Twitter Dev (@TwitterDev) <a href="https://twitter.com/ryfazrin/status/1504760897176174595">August 23, 2021</a>
+          &mdash; Twitter Dev (@TwitterDev) <a href="https://twitter.com/ryfazrin/status/1504760897176174595">February 8, 2025</a>
         </blockquote>
 
         {/* Embed Timeline */}
