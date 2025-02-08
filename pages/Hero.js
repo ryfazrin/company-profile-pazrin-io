@@ -16,6 +16,14 @@ export default function Hero() {
           We create beautiful <br />and fast web services
         </h1>
       </section>
+      {/* Google Tag Manager */}
+      <div>
+        <button onClick={() => {
+          const data = { event: 'button-click', some: { data: true } };
+          console.log('dataLayer.push()');
+          dataLayer.push(data);
+        }}>Standard dataLayer.push()</button>
+      </div>
       {/* Facebook Pixel */}
       <div>
         <button onClick={() => fbq('track', 'PageView')}>fbq('track', 'PageView')</button>

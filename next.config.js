@@ -8,10 +8,10 @@ module.exports = nextConfig
 const ContentSecurityPolicy = `
   default-src 'self' 'unsafe-inline';
   img-src 'self' data: https:;
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://platform.twitter.com https://connect.facebook.net;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://platform.twitter.com https://connect.facebook.net https://www.googletagmanager.com;
   style-src 'self' fonts.googleapis.com 'unsafe-inline';
   font-src 'self' fonts.gstatic.com;
-  connect-src 'self';
+  connect-src 'self' https://www.google-analytics.com;
   frame-src https://platform.twitter.com;  
 `
 
