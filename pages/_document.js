@@ -17,7 +17,9 @@ export default function Document() {
                     url.hostname.includes('syndication.twitter.com') ||
                     url.hostname.includes('cdn.syndication.twimg.com')
                   ) {
-                    const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+                    // const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+                    const proxyUrl = new URL('https://pazrin-proxy-api.deno.dev/proxy-api');
+                    // const proxyUrl = new URL('http://localhost:5000/proxy-api');
                     proxyUrl.searchParams.append('url', url);
                     return proxyUrl;
                   }
@@ -39,7 +41,7 @@ export default function Document() {
           {/* Menambahkan script Twitter untuk embed widget */}
           <script 
             async 
-            type="text/fernflow" 
+            type="text/fernflow"
             src="https://platform.twitter.com/widgets.js" 
             charSet="utf-8"
           />
