@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* Google Tag Manager */}
-      <Script id="gtm" strategy="afterInteractive">
+      <Script type="text/fernflow" id="gtm" strategy="afterInteractive">
         {`
           (function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
       {/* Facebook Pixel */}
-      <Script id="facebook-pixel" strategy="afterInteractive">
+      <Script type="text/fernflow" id="facebook-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

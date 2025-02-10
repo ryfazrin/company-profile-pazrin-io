@@ -15,14 +15,15 @@ export default function Document() {
                 resolveUrl(url, location) {
                   if (
                     url.hostname.includes('syndication.twitter.com') ||
-                    url.hostname.includes('cdn.syndication.twimg.com')
+                    url.hostname.includes('cdn.syndication.twimg.com') ||
+                    url.hostname.includes('connect.facebook.net')
                   ) {
                     const proxyUrl = new URL('https://pazrin-proxy-api.deno.dev/proxy-api');
                     proxyUrl.searchParams.append('url', url);
                     return proxyUrl;
                   }
                 },
-                forward: [],
+                forward: ["fbq", "dataLayer.push"],
                 logCalls: true,
                 logGetters: true,
                 logSetters: true,
