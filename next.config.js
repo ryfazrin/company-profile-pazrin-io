@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://pazrin-proxy-api.deno.dev https://platform.twitter.com https://connect.facebook.net https://www.googletagmanager.com;
   style-src 'self' fonts.googleapis.com 'unsafe-inline';
   font-src 'self' fonts.gstatic.com;
-  connect-src 'self' https://pazrin-proxy-api.deno.dev https://www.google-analytics.com https://platform.twitter.com https://syndication.twitter.com https://cdn.builder.io https://cdn.builder.codes https://pbs.twimg.com https://cdn.syndication.twimg.com https://www.facebook.com;
+  connect-src 'self' https://pazrin-proxy-api.deno.dev https://www.google-analytics.com https://platform.twitter.com https://syndication.twitter.com https://cdn.builder.io https://cdn.builder.codes https://pbs.twimg.com https://cdn.syndication.twimg.com;
   frame-src 'self' https://pazrin-proxy-api.deno.dev https://platform.twitter.com;  
 `
 

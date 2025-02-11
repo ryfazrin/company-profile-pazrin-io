@@ -8,16 +8,6 @@ export default function Hero() {
     }
   }, []);
 
-  const sendEvent = () => {
-    window.fbq('track', 'PageView');
-  }
-
-  const gtmPush = () => {
-    const data = { event: 'button-click', some: { data: true } };
-    console.log('dataLayer.push()');
-    dataLayer.push(data);
-  }
-
   return (
     <>
       <section className="shift">
@@ -26,40 +16,38 @@ export default function Hero() {
           We create beautiful <br />and fast web services
         </h1>
       </section>
-      <section style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}>
-        {/* Google Tag Manager */}
-        <div>
-          <button onClick={gtmPush}>Standard dataLayer.push()</button>
-        </div>
-        {/* Facebook Pixel */}
-        <div>
-          <button onClick={sendEvent}>fbq('track', 'PageView')</button>
-        </div>
-        {/* Embed Tweet */}
-        <div>
-            {/* <Image src="/heroImage.jpg" alt="teamwork on web services" width="1332px" height="354px"/> */}
-          <blockquote className="twitter-tweet">
-            <p lang="en" dir="ltr">
-              Just setting up my Twitter. #myfirstTweet
-            </p>
-            &mdash; Twitter Dev (@TwitterDev) <a href="https://twitter.com/ryfazrin/status/1504760897176174595">February 8, 2025</a>
-          </blockquote>
+      {/* Google Tag Manager */}
+      <div>
+        <button onClick={() => {
+          const data = { event: 'button-click', some: { data: true } };
+          console.log('dataLayer.push()');
+          dataLayer.push(data);
+        }}>Standard dataLayer.push()</button>
+      </div>
+      {/* Facebook Pixel */}
+      <div>
+        <button onClick={() => fbq('track', 'PageView')}>fbq('track', 'PageView')</button>
+      </div>
+      {/* Embed Tweet */}
+      <div>
+          {/* <Image src="/heroImage.jpg" alt="teamwork on web services" width="1332px" height="354px"/> */}
+        <blockquote className="twitter-tweet">
+          <p lang="en" dir="ltr">
+            Just setting up my Twitter. #myfirstTweet
+          </p>
+          &mdash; Twitter Dev (@TwitterDev) <a href="https://twitter.com/ryfazrin/status/1504760897176174595">February 8, 2025</a>
+        </blockquote>
 
-          {/* Embed Timeline */}
-          <a
-            className="twitter-timeline"
-            data-width="550"
-            data-height="400"
-            href="https://twitter.com/ryfazrin/status/1504760897176174595"
-          >
-            Tweets by TwitterDev
-          </a>
-        </div>
-      </section>
+        {/* Embed Timeline */}
+        <a
+          className="twitter-timeline"
+          data-width="550"
+          data-height="400"
+          href="https://twitter.com/ryfazrin/status/1504760897176174595"
+        >
+          Tweets by TwitterDev
+        </a>
+      </div>
       <section className="shift">
         <h1>Story, emotion <br/>and purpose</h1>
         <p>We help transform your ideas into real world applications that will outperform your toughest competition and help you achieve your strategic goals in short period of time.</p>

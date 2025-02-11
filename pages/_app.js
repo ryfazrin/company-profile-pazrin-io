@@ -59,19 +59,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* Jika Web Worker aktif, ubah type script menjadi "text/fernflow" */}
-      <script
-        async
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"}
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      />
-
-      <Script
-        id="gtm"
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"} 
-        strategy="afterInteractive"
-      >
+      {/* Google Tag Manager */}
+      <Script id="gtm" strategy="afterInteractive">
         {`
           (function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -85,12 +74,8 @@ function MyApp({ Component, pageProps }) {
           })(window, document, 'script', 'dataLayer', 'GTM-WRNP3NZ');
         `}
       </Script>
-
-      <Script 
-        id="facebook-pixel"
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"} 
-        strategy="afterInteractive"
-      >
+      {/* Facebook Pixel */}
+      <Script id="facebook-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
