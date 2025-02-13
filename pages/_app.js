@@ -1,75 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  const [shouldLoadScript, setShouldLoadScript] = useState(false);
-
-  useEffect(() => {
-    if (!router.isReady) return;
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const isWebWorkerEnabled = urlParams.get('webworker') === 'true';
-
-    setShouldLoadScript(isWebWorkerEnabled);
-
-    if (isWebWorkerEnabled) {
-      // Tambahkan konfigurasi web worker
-      const fernflowScript = document.createElement('script');
-      fernflowScript.innerHTML = `
-        window.fernflow = {
-          resolveUrl(url, location) {
-            if (
-              url.hostname.includes('syndication.twitter.com') ||
-              url.hostname.includes('cdn.syndication.twimg.com') ||
-              url.hostname.includes('connect.facebook.net')
-            ) {
-              const proxyUrl = new URL('https://pazrin-proxy-api.deno.dev/proxy-api');
-              proxyUrl.searchParams.append('url', url);
-              return proxyUrl;
-            }
-          },
-          forward: ["fbq", "dataLayer.push"],
-          logCalls: true,
-          logGetters: true,
-          logSetters: true,
-          logImageRequests: true,
-          logMainAccess: true,
-          logSendBeaconRequests: true,
-          logStackTraces: false,
-          logScriptExecution: true,
-        };
-      `;
-      document.body.appendChild(fernflowScript);
-
-      // Web Worker
-      const script = document.createElement('script');
-      script.src = "/~fernflow/debug/tool-web-worker.js";
-      script.async = true;
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(fernflowScript);
-        document.body.removeChild(script);
-      };
-    }
-  }, [router.isReady]);
-
   return (
     <>
       {/* Jika Web Worker aktif, ubah type script menjadi "text/fernflow" */}
       <script
         async
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"}
+        type={"text/fernflow"}
         src="https://platform.twitter.com/widgets.js"
         charSet="utf-8"
       />
 
       <Script
         id="gtm"
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"} 
+        type={"text/fernflow"} 
         strategy="afterInteractive"
       >
         {`
@@ -88,7 +33,7 @@ function MyApp({ Component, pageProps }) {
 
       <Script 
         id="facebook-pixel"
-        type={shouldLoadScript ? "text/fernflow" : "text/javascript"} 
+        type={"text/fernflow"} 
         strategy="afterInteractive"
       >
         {`
