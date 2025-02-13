@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: feat/web-worker
+    branches: main
   pull_request:
-    branches: feat/web-worker
+    branches: main
 
 jobs:
   deploy:
@@ -37,7 +37,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "company-profile-web-worker"
+          project: "pazrina-company-pro-47"
           entrypoint: "jsr:@deno/nextjs-start"
           root: "."
           include: .next, public
