@@ -3,7 +3,23 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import '../styles/globals.css';
 
+// Fungsi untuk log call stack dan kedalamannya
+const logCallStack = function(context) {
+  try {
+    var stack = new Error().stack ? new Error().stack.split('\n').slice(1) : [];
+    window._callStackDepths = window._callStackDepths || [];
+    window._callStackDepths.push(stack.length);
+    console.log('[CallStack][Main][' + context + '] Kedalaman: ' + stack.length);
+    // console.trace(); // Uncomment jika ingin melihat trace detail
+  } catch (e) {
+    console.error('[CallStack][Main thread][' + context + '] Error logging call stack:', e);
+  }
+};
+
 function MyApp({ Component, pageProps }) {
+  // Log the call stack to measure main thread stack
+  logCallStack('Main thread');
+  
   const router = useRouter();
   const [shouldLoadScript, setShouldLoadScript] = useState(false);
 
